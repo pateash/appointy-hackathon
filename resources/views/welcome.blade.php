@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Appointy Hackathon API</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -66,28 +66,30 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @if (Auth::check())
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ url('/login') }}">Login</a>
-                        <a href="{{ url('/register') }}">Register</a>
-                    @endif
-                </div>
-            @endif
-
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Appointy Hackathon API
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="/users">users</a>
+                    <a href="/agents">Agents</a>
+
+                    {{--simple order--}}
+                    <a href="/orders">Orders</a>
+                    <a href="/order/ORDER_ID">Order Detail</a>
+                    <a href="/order/ORDER_ID/agent">Order Agent</a>
+
+                    <br><br><br>
+                    {{--return order--}}
+                    <a href="/returns">Return Orders</a>
+
+                    {{--place return_order by copying from order and assign agent--}}
+                    <a href="/return/place/ORDER_ID">Place Return Order</a>
+
+                    <a href="/return/RETURN_ORDER_ID/agent">Return Order Agent</a>
+                    <a href="/returns/RETURN_ORDER_ID">Return Order Detail</a>
+
                 </div>
             </div>
         </div>
