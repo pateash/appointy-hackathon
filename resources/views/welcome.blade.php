@@ -87,7 +87,7 @@
                     {{--place return_order by copying from order and assign agent--}}
                     <a href="/return/place/ORDER_ID">Place Return Order</a>
 
-                    <a href="/return/RETURN_ORDER_ID/agent">Return Order Agent</a>
+                    {{--<a href="/return/RETURN_ORDER_ID/agent">Return Order Agent</a>--}}
                     <a href="/returns/RETURN_ORDER_ID">Return Order Detail</a>
 
                 </div>

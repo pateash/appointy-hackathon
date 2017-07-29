@@ -18,8 +18,8 @@ $factory->define(App\Order::class, function (Faker $faker) {
 
     return [
         'item' => $faker->company,
-        'user_id'=>$faker->numberBetween(0,100),
-        'agent_id'=>$faker->numberBetween(0,50),
+        'user_id'=>$faker->numberBetween(1,100),
+        'agent_id'=>$faker->numberBetween(1,10),
         'price'=>$faker->numberBetween(10,5000)
     ];
 });

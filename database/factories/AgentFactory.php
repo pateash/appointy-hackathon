@@ -18,7 +18,7 @@ $factory->define(App\Agent::class, function (Faker $faker) {
 
     return [
         'name' => $faker->name,
-        'lattitude'=>$faker->randomFloat(2,0,100),
-        'longitude'=>$faker->randomFloat(2,0,100),
+        'lattitude'=>$faker->randomFloat(8,27,27.2),
+        'longitude'=>$faker->randomFloat(8,77,77.2),
     ];
 });

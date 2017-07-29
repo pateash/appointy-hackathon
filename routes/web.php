@@ -31,11 +31,12 @@ Route::get('/returns','ReturnController@show');
 Route::get('/return/place/{order}','ReturnController@place');
 Route::get('/return/complete/{order}','ReturnController@complete');
 Route::get('/return/{return}','ReturnController@details');
-Route::get('/return/{return}/agent','ReturnController@agent');
 
 
 //agent routes
 Route::get('/agents','AgentController@show');
+Route::get('/agent/{agent}','AgentController@details');
 Route::get('/agent/{agent}/orders','AgentController@orders');
+Route::get('/agent/{agent}/returns','AgentController@returns');
 
 //returns

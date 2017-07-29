@@ -16,8 +16,9 @@ class CreateAgentsTable extends Migration
         Schema::create('agents', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->float('longitude',8,2);
-            $table->float('lattitude',8,2);
+            $table->float('longitude',10,8);
+            $table->float('lattitude',10,8);
+            $table->tinyInteger('free')->default(1);// by default everybody is free
             $table->timestamps();
         });
     }

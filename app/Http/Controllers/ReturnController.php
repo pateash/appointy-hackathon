@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Order;
+use App\Agent;
+
 class ReturnController extends Controller
 {
     /*
@@ -21,16 +23,20 @@ class ReturnController extends Controller
         if($order->returnPlaced==1)
             return ['error'=>['Return Order  with this Order id is already Placed']];
 
-        $order->returnPlaced=1;
 
         //TODO: find agent id
-        $order->agent_id=0;
-
+        $order->agent_id=Agent::findAgent($order);
+//        dd('calling fin agent');
+        $order->returnPlaced=1;
         $order->save();
+        $agent=Agent::find($order->agent_id);
+        $agent->free=0;
+        $agent->save();
         return $order;
     }
 
     public function complete(Order $order){
+
         if($order->returnPlaced==2)
             return ['error'=>['This Return Order Already Completed']];
 
@@ -47,11 +53,6 @@ class ReturnController extends Controller
             return $details;
         else return ['error'=>['No Return Order Placed with this Order Id']];
 
-    }
-
-
-    public function agent(Order $order){
-        return $order->agent;
     }
 }
 
