@@ -15,5 +15,27 @@ Route::get('/',function (){
     return view("welcome");
 });
 
-Route::get('/users','UsersController@index');
+//user routes
+Route::get('/users','UsersController@show');
+Route::get('/user/{user}','UsersController@details');
+Route::get('/user/{user}/orders','UsersController@orders');
 
+
+//order routes
+Route::get('/orders','OrdersController@show');
+Route::get('/order/{order}','OrdersController@details');
+Route::get('/order/{order}/agent','OrdersController@agent');
+
+//returns
+Route::get('/returns','ReturnController@show');
+Route::get('/return/place/{order}','ReturnController@place');
+Route::get('/return/complete/{order}','ReturnController@complete');
+Route::get('/return/{return}','ReturnController@details');
+Route::get('/return/{return}/agent','ReturnController@agent');
+
+
+//agent routes
+Route::get('/agents','AgentController@show');
+Route::get('/agent/{agent}/orders','AgentController@orders');
+
+//returns

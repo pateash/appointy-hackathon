@@ -17,7 +17,9 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->string('item');
             $table->integer('user_id');
+            $table->integer('agent_id');
             $table->integer('price');
+            $table->tinyInteger('returnPlaced')->default(0);
             $table->timestamps();
         });
     }
