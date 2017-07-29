@@ -12,9 +12,22 @@ This API provides Ecommerce 'Order return' Functionality.
 - Based on Rest API Guidelines
 - Automatic Migrations for Models 
 
-## API Documentation
+## Install and Run
+- clone project
+- install composer dependencies using `composer install` (of course you need, php and composer
+- create `.env` file by copying from `.env.example`
+- run `php artisan key:generate` command, this will get APP_KEY in `.env` file
+- create database and fill information in `.env' file
+- you will need to  seed your database , use following command steps
+    - run `php artisan tinker` to enter in to command line tinker
+    - enter `factory(App\User::class,100)->create()`, this will seed your `User` table with 100 records 
+    - enter `factory(App\Order::class,100)->create()`, this will seed your `Order` table with 100 records 
+    - enter `factory(App\Agent::class,10)->create()`, this will seed your `Agent` table with 10 records 
+    
+- Now run `php artisan serve`, which will run your app on `localhost:8000`.
+- That's It, You can modify and create a pull request, Thanks.
 
-Documenatation to this API could be found on Swagger, click following link for More Documenations
+## API Documentation
 
 #### Welcome Page
 >`  GET / ` will take you to the Welcome Page. where you will get same documentation.
@@ -59,6 +72,10 @@ Documenatation to this API could be found on Swagger, click following link for M
 | GET /agent/{agentId}     | Agent Detail      | 
 | GET /agent/{agentId}/orders     | All Orders Delivered By Agent      | 
 
+## Bugs and Fixes
+
+Every thing anyone create has bugs and some of them can be fixed, If you find one,
+please mail me at [ashishpatel0720@gmail.com](mailto:ashishpatel@gmail.com)
 
 ## License
 
