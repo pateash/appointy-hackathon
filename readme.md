@@ -21,6 +21,7 @@ This API provides Ecommerce 'Order return' Functionality.
 - create `.env` file by copying from `.env.example`
 - run `php artisan key:generate` command, this will get APP_KEY in `.env` file
 - create database and fill information in `.env' file
+- now run migrations for creating table `php artisan migrate` 
 - you will need to  seed your database , use following command steps
     - run `php artisan tinker` to enter in to command line tinker
     - enter `factory(App\User::class,100)->create()`, this will seed your `User` table with 100 records 
@@ -29,6 +30,8 @@ This API provides Ecommerce 'Order return' Functionality.
     
 - Now run `php artisan serve`, which will run your app on `localhost:8000`.
 - That's It, You can modify and create a pull request, Thanks.
+
+>Remember Initially, all agents are free and return Orders are zero.
 
 ## API Documentation
 
