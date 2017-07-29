@@ -38,5 +38,7 @@ Route::get('/agents','AgentController@show');
 Route::get('/agent/{agent}','AgentController@details');
 Route::get('/agent/{agent}/orders','AgentController@orders');
 Route::get('/agent/{agent}/returns','AgentController@returns');
+Route::get('/agents/free','AgentController@freeAgents');
+Route::get('/agents/busy','AgentController@busyAgents');
 
 //returns

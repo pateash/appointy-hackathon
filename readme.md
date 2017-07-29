@@ -74,6 +74,8 @@ This API provides Ecommerce 'Order return' Functionality.
 | GET /agents    |   All Registered Agents   | 
 | GET /agent/{agentId}     | Agent Detail      | 
 | GET /agent/{agentId}/orders     | All Orders Delivered By Agent      | 
+| GET /agents/free     | All Free Agents (with no assigned order)       | 
+| GET /agents/busy     | All Busy Agents (with assigned order/orders)       | 
 
 ## Bugs and Fixes
 

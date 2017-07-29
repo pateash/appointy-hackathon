@@ -20,17 +20,16 @@ class ReturnController extends Controller
 
     public function place(Order $order){
 
-        if($order->returnPlaced==1)
+        if($order->returnPlaced==1) //if already placed, then return error
             return ['error'=>['Return Order  with this Order id is already Placed']];
 
-
-        //TODO: find agent id
+        //find appropriate user, who is free or nearest
         $order->agent_id=Agent::findAgent($order);
-//        dd('calling fin agent');
         $order->returnPlaced=1;
         $order->save();
+
         $agent=Agent::find($order->agent_id);
-        $agent->free=0;
+        $agent->free=0;//not this user is not free
         $agent->save();
         return $order;
     }
@@ -42,7 +41,11 @@ class ReturnController extends Controller
 
         if($order->returnPlaced==0)
             return ['error'=>['No Return Order Placed with this Order Id']];
+
         $order->returnPlaced=2;
+
+        //we have to somehow remove those orders from agent list which has been complete
+        // which will be doing by just finding orders with returnPlace!=2;
         $order->save();
         return $order;
     }
